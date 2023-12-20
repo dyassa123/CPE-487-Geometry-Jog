@@ -1,7 +1,7 @@
 # Geometry Jog Game
 > *I pledge my Honor that I have abided by the Stevens Honor System.*
 
-### *Brief Overview*
+## *Brief Overview*
 Geometry Jog Game is an interactive game inspired by titles like the Chrome Dinosaur Game, Flappy Bird, and Geometry Dash. It's developed for the Nexys-A7 100T board, featuring a player-controlled magenta ball. The player's objective is to avoid red squares while scoring points by collecting blue squares. The score is updated and portrayed on 7-segment anode displays of the Nexys board. The game is playable through button inputs on the board, with one button for jumping and another for resetting the game.
 
 ## *Expected Behavior*
@@ -22,10 +22,13 @@ This game requires the VGA connector to display on an external screen. Once conn
 * Display Output: VGA output to display the game state.
 * Score Display: Seven-segment display on the Nexys board for the score.
 
-### *Game In Action (Player Jumping)*
+
+## *Project in Action*
+
+### Game In Action (Player Jumping)
 (Insert First Pic)
 
-### *Score Display*
+### Score Display
 (Insert Second Pic)
 
 ## *Steps To Run The Project*
