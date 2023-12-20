@@ -70,3 +70,67 @@ This game requires the VGA connector to display on an external screen. Once conn
   * The program will start to run. You will notice the red and blue blocks starting to move and approach the ball. Push BTNC to get the ball to jump and keep pressing it when necessary to keep the game in play.
 
 ## *Modifications*
+Many of the files from *Lab 6: 'Pong'* were untouched. The constraint file removed the switch inputs and exchanged them for another button. The top-level file ***BallGame.vhd***(***Pong.vhd*** equivalent) added new ports and mapped them correctly. The ***adc_if.vhd*** file was completely removed from the project as we did not need the potentiometer. Most of the changes came in the ***bat_n_ball.vhd*** file which housed the logic for the game. Certain components of the *Pong* game were reused/reworked to fit the context:
+
+1. The bat was retooled to be a static component that spanned the entire width of the screen but still recycled the original code. The square obstacles also used this logic to be drawn.
+
+(Insert Both Pictures)
+
+2.  Collision Detection
+
+(Insert Picture)
+
+3.  We changed the motion from the original ***bat_n_ball.vhd*** file to better suit our needs for the game.
+   
+ * First we gave each component its own speed, and declared a time factor that would be able to manipulate the speed of each component proportionally.
+
+ * The game logic also gave each object its own ‘count’ variable.
+   
+ * The product of the time factor and the object’s own speed act as a threshold.
+   
+ * Each clock cycle the object’s count will increment by 1.
+   
+ * Once the object reaches the threshold it will move to its next position
+   
+ * In this case, the higher the speed/time factor, the slower the object will move as it needs to reach a higher threshold before it can update.
+   
+ * This is also used in conjunction with the jump movement for the player which will decrement its y pixel until it is at its apex position, in which case it will increment the y position where it reaches the ground once more.
+
+(Insert Picture)
+
+4. Random Number Generator
+
+ * We used a linear feedback shift register to generate pseudo-random numbers.
+   
+ * This operation XORs the two most significant bits of a vector and stores the result in a temporary variable.
+   
+ * The initial vector then has each of its bits shifted to the right and replaces the least significant bit with the XOR result.
+   
+ * This new vector is then converted into an integer and used as the random number.
+
+ (Insert First Picture)
+
+ * This random number was used when spawning in new obstacles.
+ 
+ * Each obstacle would start on the right side of the screen or even further past it.
+ 
+ * The motion described before would take it to the left side where its x component becomes 0.
+ 
+ * At this point, the object then respawns at the right side of the screen (800 pixels in the x) plus a random amount of pixels in addition to that using the previously generated random number.
+ 
+ * Each of the objects also has another factor added as well as moving at different speeds to make the generation of them feel more random.
+
+
+(Insert Second Picture)
+
+## *Development Process and Summary*
+ * Team Contributions
+   * X
+ * Timeline
+   * Y
+ * Challenges and Solutions
+   * Z
+
+## *Conclusion*
+
+In conclusion, the Geometry Jog Game project was more than a mere academic exercise; it was a comprehensive learning journey that touched upon various aspects of digital system design. It underscored the importance of teamwork, perseverance, and creative problem-solving in the field of engineering. This project has not only left us with a functional and entertaining game but also a wealth of knowledge and skills that will be instrumental in our future endeavors as engineers.
