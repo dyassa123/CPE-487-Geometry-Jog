@@ -3,7 +3,7 @@
 > David Martinez and Daniel Yassa
 
 ## *Brief Overview*
-Geometry Jog Game is an interactive game inspired by titles like the Chrome Dinosaur Game, Flappy Bird, and Geometry Dash. It's developed for the Nexys-A7 100T board, featuring a player-controlled magenta ball. The player's objective is to avoid red squares while scoring points by collecting blue squares. The score is updated and portrayed on 7-segment anode displays of the Nexys board. The game is playable through button inputs on the board, with one button for jumping and another for resetting the game.
+Geometry Jog Game is an interactive game inspired by titles like the [Chrome Dinosaur Game](https://en.wikipedia.org/wiki/Dinosaur_Game), [Flappy Bird](https://en.wikipedia.org/wiki/Flappy_Bird), and [Geometry Dash](https://en.wikipedia.org/wiki/Geometry_Dash). It's developed for the Nexys-A7 100T board, featuring a player-controlled magenta ball. The player's objective is to avoid red squares while scoring points by collecting blue squares. The score is updated and portrayed on seven-segment anode displays on the board. The game is playable through button inputs on the board, with one button for jumping and another for resetting the game.
 
 ## *Expected Behavior*
 This game requires the VGA connector to display on an external screen. Once connected to the screen and FPGA run synthesis, and implementation, generate bitstream, and program the board to get the game running. Once running, the player, as a magenta ball, can press the middle button (BTNC) to jump. They can also press the top button (BTNU) to reset the game to the initial starting spot. Red and blue squares will quickly and randomly come at the player. If touched, the blue squares will increment the player’s score which is displayed on the board in hexadecimal. Conversely, the red squares will cause the game to reset along with the player’s score. 
@@ -13,7 +13,7 @@ This game requires the VGA connector to display on an external screen. Once conn
 
 ## *Required Attachments*
 * Nexys-A7 100T Board
-* VGA Connector for display output
+* VGA Connector for Display Output
 
 ## *High-Level Block Diagram*
 ![Schematic](/BallGamePics/circuit.png)
@@ -23,7 +23,29 @@ This game requires the VGA connector to display on an external screen. Once conn
 * Display Output: VGA output to display the game state.
 * Score Display: Seven-segment display on the Nexys board for the score.
 
+* The ***BallGame.vhd*** module serves as the top-level that integrates all other components.
+  *  Generates and manages various clock signals for different modules.
+  *  Connects sub-modules like ***bat_n_ball, vga_sync,*** and ***leddecNew***.
+  *  Routes signals between sub-modules and the Nexys-A7 board's physical ports.
+  *  Processes button inputs for game control (jump and reset).
+ 
+* The ***bat_n_ball.vhd*** module serves as the core game logic and rendering module for our game. 
+  *  Manages the player's (ball's) movements, including jumping.
+  *  Controls the appearance and movement of obstacles (*big*, *med*, and *sml*).
+  *  Checks for collisions between the player and obstacles.
+  *  Manages the scoring system of the game.
+  *  Determines what is displayed at each pixel for the VGA output.
+ 
+*  The ***vga_sync.vhd*** module manages vga synchronization and display output. 
+  * Generates horizontal and vertical sync signals for VGA.
+  * Calculates pixel row and column for the current frame.
+  * Controls the RGB output for each pixel to be displayed on the VGA screen.
 
+* The ***leddecNew.vhd*** module drives the seven-segment LED display on the Nexys-A7 board.
+  * Chooses which digit on the seven-segment display to activate.
+  * Determines which segments to light up for displaying numbers.
+  * Shows the player's score or other numerical data on the LED display.
+ 
 ## *Project in Action*
 
 ### Game In Action (Player Jumping)
