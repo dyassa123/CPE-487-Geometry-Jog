@@ -70,7 +70,7 @@ This game requires the VGA connector to display on an external screen. Once conn
   * The program will start to run. You will notice the red and blue blocks starting to move and approach the ball. Push BTNC to get the ball to jump and keep pressing it when necessary to keep the game in play.
 
 ## *Modifications*
-Many of the files from *Lab 6: 'Pong'* were untouched. The constraint file removed the switch inputs and exchanged them for another button. The top-level file ***BallGame.vhd***(***Pong.vhd*** equivalent) added new ports and mapped them correctly. The ***adc_if.vhd*** file was completely removed from the project as we did not need the potentiometer. Most of the changes came in the ***bat_n_ball.vhd*** file which housed the logic for the game. Certain components of the *Pong* game were reused/reworked to fit the context:
+Many of the files from *Lab 6: 'Pong'* were untouched. The constraint file removed the switch inputs and exchanged them for another button. The top-level file ***BallGame.vhd***(***Pong.vhd*** equivalent) added new ports and mapped them correctly. The ***adc_if.vhd*** file was completely removed from the project as we did not need the potentiometer. Most of the changes came in the ***bat_n_ball.vhd*** file which housed the logic for the game. Many signals were added to fit the game but followed the same format as previous *Pong* elements. Certain components of the *Pong* game were reused/reworked to fit the context:
 
 1. The bat was retooled to be a static component that spanned the entire width of the screen but still recycled the original code. The square obstacles also used this logic to be drawn.
 
