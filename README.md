@@ -150,11 +150,11 @@ Many of the files from *Lab 6: 'Pong'* were untouched. The constraint file remov
 
 ## *Development Process and Summary*
  * Team Contributions
-   * X
+   * Each member contributed equally as although Danny’s computer was unable to run the program (we found this out during Lab 3), we both worked together to figure out, code, and tweak each component as well as write the report.
  * Timeline
-   * Y
+   * The process began with identifying modules that could be reused and anything that needed to be added. We knew we would be able to reuse the drawing from pong and rework it/add more components to fit the game situation. We also thought that we could reuse the motion for the ball but this proved difficult later on. Another component was the random number generator as we did not want to make the game predictable. The first change was removing the adc_if file completely and any variables or signals related to it across the program. Next we tweaked the inputs in the constraint and top level files to match what we needed (jump and reset). After that we drew the new components and colored them differently. Next we researched how to generate random numbers and implement them in VHDL as we knew we would need a random number at some point and it was then implemented as the LFSR. We came up with the new motion system that also used the random number. We then recycled the ball bouncing off the bat system as our hit detection system which would either reset the game back to initial inputs, or increment the score to be displayed in the same manner as was with the Pong game.
  * Challenges and Solutions
-   * Z
+   *  We tried to implement the motion from the ball originally in pong but this system proved somewhat complicated and wanted to start from the ground up. Eventually we found the time factor and threshold method that is the basis for all of our motion and allowed us to integrate the random number by placing objects off screen.
 
 ## *Conclusion*
 
