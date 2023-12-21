@@ -49,10 +49,10 @@ This game requires the VGA connector to display on an external screen. Once conn
 ## *Project in Action*
 
 ### Game In Action (Player Jumping)
-(Insert First Pic)
+![Game](/BallGamePics/game.jpg)
 
 ### Score Display
-(Insert Second Pic)
+![Board](/BallGamePics/board.jpg)
 
 ## *Steps To Run The Project*
 
@@ -97,11 +97,13 @@ Many of the files from *Lab 6: 'Pong'* were untouched. The constraint file remov
 
 1. The bat was retooled to be a static component that spanned the entire width of the screen but still recycled the original code. The square obstacles also used this logic to be drawn.
 
-(Insert Both Pictures)
+![Draw1](/BallGamePics/draw1.png)
+
+![Draw2](/BallGamePics/draw2.png)
 
 2.  Collision Detection
 
-(Insert Picture)
+![Collision](/BallGamePics/collision.png)
 
 3.  We changed the motion from the original ***bat_n_ball.vhd*** file to better suit our needs for the game.
    
@@ -119,7 +121,7 @@ Many of the files from *Lab 6: 'Pong'* were untouched. The constraint file remov
    
  * This is also used in conjunction with the jump movement for the player which will decrement its y pixel until it is at its apex position, in which case it will increment the y position where it reaches the ground once more.
 
-(Insert Picture)
+![Jump](/BallGamePics/jump.png)
 
 4. Random Number Generator
 
@@ -131,7 +133,7 @@ Many of the files from *Lab 6: 'Pong'* were untouched. The constraint file remov
    
  * This new vector is then converted into an integer and used as the random number.
 
- (Insert First Picture)
+ ![Random](/BallGamePics/rand.png)
 
  * This random number was used when spawning in new obstacles.
  
@@ -144,7 +146,7 @@ Many of the files from *Lab 6: 'Pong'* were untouched. The constraint file remov
  * Each of the objects also has another factor added as well as moving at different speeds to make the generation of them feel more random.
 
 
-(Insert Second Picture)
+![Move](/BallGamePics/move.png)
 
 ## *Development Process and Summary*
  * Team Contributions
