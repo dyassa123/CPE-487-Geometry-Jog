@@ -16,7 +16,7 @@ This game requires the VGA connector to display on an external screen. Once conn
 * VGA Connector for display output
 
 ## *High-Level Block Diagram*
-(Insert Top Level Representation Pic)
+![Schematic](/BallGamePics/circuit.png)
 
 * Input Processing: Button inputs on the Nexys board.
 * Game Logic: Handles player movements, collision detection, and score updates.
